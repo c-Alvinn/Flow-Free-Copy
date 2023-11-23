@@ -4,18 +4,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    android:gravity="center"
     tools:context=".play.games.FirstGameActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:textSize="30sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textAllCaps="true"
+        android:text="Fase 1"/>
 
     <GridLayout
         android:id="@+id/gridLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_below="@+id/textView"
+        android:layout_marginTop="170dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
         android:columnCount="3"
         android:gravity="center"
         android:rowCount="3">
@@ -84,9 +95,17 @@
             android:background="#333333" />
 
 
-
-
     </GridLayout>
+
+    <ImageView
+        android:id="@+id/resetView"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/reset_icon"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:clickable="true"/>
 
 
 </RelativeLayout>

@@ -9,12 +9,14 @@ import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import android.widget.GridLayout
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.flowcopy.R
 
 class FirstGameActivity : AppCompatActivity() {
 
+    private lateinit var resetImg: ImageView
     private lateinit var gridLayout: GridLayout
     private lateinit var pointsInitial: Array<Array<Int>>
     private lateinit var pointsCurrent: Array<Array<Int>>
@@ -34,6 +36,13 @@ class FirstGameActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_first_game)
+
+        resetImg = findViewById(R.id.resetView)
+
+        resetImg.setOnClickListener(){
+            pointsCurrent = pointsInitial
+            initializeGrid()
+        }
 
         gridLayout = findViewById(R.id.gridLayout)
         pointsInitial = arrayOf(
