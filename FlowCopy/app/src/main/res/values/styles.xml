@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CustomButton" parent="Widget.AppCompat.Button">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:padding">7dp</item>
+        <item name="android:outlineProvider">none</item>
+    </style>
+
+    <style name="MenuButtonStyle">
+        <item name="android:background">@drawable/button_background</item> <!-- Fundo preto transparente -->
+        <item name="android:textSize">25sp</item>
+        <item name="android:textColor">@android:color/white</item> <!-- Cor do texto (substitua pela cor desejada) -->
+        <item name="android:textStyle">bold</item> <!-- Texto em negrito -->
+        <item name="android:layout_width">70dp</item>
+        <item name="android:layout_height">70dp</item>
+        <item name="android:layout_margin">10dp</item> <!-- Espaçamento entre os botões -->
+    </style>
+
+    <style name="LoginEditTextStyle">
+        <item name="android:layout_width">300dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:background">@drawable/edittext_background</item>
+        <item name="android:textColorHint">#808080</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+
+    <style name="LoginButtonStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:padding">15dp</item>
+        <item name="android:background">@drawable/button_login_background</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:layout_marginTop">20dp</item>
+    </style>
+
+</resources>

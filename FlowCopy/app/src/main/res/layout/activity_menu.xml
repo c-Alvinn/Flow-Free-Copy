@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".MenuActivity">
+
+    <!-- Logo no topo -->
+    <ImageView
+        android:id="@+id/imageLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"/>
+
+    <!-- Container para centralizar os botões verticalmente -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerVertical="true"
+        android:gravity="center">
+
+        <!-- Opção 1 -->
+        <Button
+            android:id="@+id/btnPlay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jogar"
+            style="@style/CustomButton"/>
+
+        <!-- Opção 2 -->
+        <Button
+            android:id="@+id/btnAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Conta"
+            style="@style/CustomButton"/>
+
+        <!-- Opção 3 -->
+        <Button
+            android:id="@+id/btnAbout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sobre"
+            style="@style/CustomButton"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

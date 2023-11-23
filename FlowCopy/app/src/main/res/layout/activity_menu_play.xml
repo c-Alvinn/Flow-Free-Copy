@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".play.MenuPlayActivity">
+
+    <!-- Título -->
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Menu de Fases"
+        android:textSize="37sp"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textAllCaps="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"/>
+
+    <!-- Container para centralizar os botões verticalmente -->
+    <GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textTitle"
+        android:layout_marginTop="30dp"
+        android:columnCount="4"
+        android:rowCount="5"
+        android:columnOrderPreserved="false"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:id="@+id/btnGame1"
+            android:gravity="center"
+            android:text="1"
+            style="@style/MenuButtonStyle"/>
+
+        <TextView
+            android:id="@+id/btnGame2"
+            android:gravity="center"
+            android:text="2"
+            style="@style/MenuButtonStyle"/>
+
+        <TextView
+            android:id="@+id/btnGame3"
+            android:gravity="center"
+            android:text="3"
+            style="@style/MenuButtonStyle"/>
+
+        <TextView
+            android:id="@+id/btnGame4"
+            android:gravity="center"
+            android:text="4"
+            style="@style/MenuButtonStyle"/>
+
+        <TextView
+            android:id="@+id/btnGame5"
+            android:gravity="center"
+            android:text="5"
+            style="@style/MenuButtonStyle"/>
+
+        <TextView
+            android:id="@+id/btnGame6"
+            android:gravity="center"
+            android:text="6"
+            style="@style/MenuButtonStyle"/>
+
+        <TextView
+            android:id="@+id/btnGame7"
+            android:gravity="center"
+            android:text="7"
+            style="@style/MenuButtonStyle"/>
+
+        <TextView
+            android:id="@+id/btnGame8"
+            android:gravity="center"
+            android:text="8"
+            style="@style/MenuButtonStyle"/>
+
+        <TextView
+            android:id="@+id/btnGame9"
+            android:gravity="center"
+            android:text="9"
+            style="@style/MenuButtonStyle"/>
+
+        <TextView
+            android:id="@+id/btnGame10"
+            android:gravity="center"
+            android:text="10"
+            style="@style/MenuButtonStyle"/>
+
+        <TextView
+            android:id="@+id/btnGame11"
+            android:gravity="center"
+            android:text="11"
+            style="@style/MenuButtonStyle"/>
+
+        <TextView
+            android:id="@+id/btnGame12"
+            android:gravity="center"
+            android:text="12"
+            style="@style/MenuButtonStyle"/>
+
+    </GridLayout>
+
+</RelativeLayout>

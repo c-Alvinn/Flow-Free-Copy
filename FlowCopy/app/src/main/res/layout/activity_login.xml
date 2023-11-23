@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".login.LoginActivity">
+
+    <!-- Título -->
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:textSize="37sp"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textAllCaps="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"/>
+
+    <!-- Container para centralizar os botões verticalmente -->
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textTitle"
+        android:layout_marginTop="40dp"
+        android:orientation="vertical"
+        android:layout_centerVertical="true"
+        android:gravity="center">
+
+
+        <EditText
+            android:id="@+id/editTextUsername"
+            style="@style/LoginEditTextStyle"
+            android:hint="Nome de Usuário"
+            android:layout_marginTop="20dp"
+            android:inputType="text" />
+
+
+        <EditText
+            android:id="@+id/editTextPassword"
+            style="@style/LoginEditTextStyle"
+            android:inputType="textPassword"
+            android:hint="Senha"
+            android:layout_marginTop="10dp"
+            android:autofillHints="password" />
+
+        <Button
+            android:id="@+id/buttonLogin"
+            style="@style/LoginButtonStyle"
+            android:text="Login"
+            android:layout_marginTop="20dp"/>
+
+        <Button
+            android:id="@+id/buttonRegister"
+            style="@style/LoginButtonStyle"
+            android:text="Registrar"
+            android:textSize="14sp"
+            android:layout_marginTop="30dp"/>
+    </LinearLayout>
+
+</RelativeLayout>

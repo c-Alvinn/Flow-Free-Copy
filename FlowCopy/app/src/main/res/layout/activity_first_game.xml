@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:gravity="center"
+    tools:context=".play.games.FirstGameActivity">
+
+    <GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:columnCount="3"
+        android:gravity="center"
+        android:rowCount="3">
+
+        <View
+            android:id="@+id/view10"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="2dp"
+            android:background="#333333" />
+
+        <View
+            android:id="@+id/view11"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="2dp"
+            android:background="#333333" />
+
+        <View
+            android:id="@+id/view12"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="2dp"
+            android:background="#333333" />
+
+        <View
+            android:id="@+id/view13"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="2dp"
+            android:background="#333333" />
+
+        <View
+            android:id="@+id/view14"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="2dp"
+            android:background="#333333" />
+
+        <View
+            android:id="@+id/view15"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="2dp"
+            android:background="#333333" />
+
+        <View
+            android:id="@+id/view16"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="2dp"
+            android:background="#333333" />
+
+        <View
+            android:id="@+id/view17"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="2dp"
+            android:background="#333333" />
+
+        <View
+            android:id="@+id/view18"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="2dp"
+            android:background="#333333" />
+
+
+
+
+    </GridLayout>
+
+
+</RelativeLayout>
