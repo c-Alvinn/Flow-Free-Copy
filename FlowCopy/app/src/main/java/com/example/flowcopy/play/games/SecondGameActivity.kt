@@ -1,9 +1,9 @@
 package com.example.flowcopy.play.games
 
-
 import android.annotation.SuppressLint
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.MotionEvent
@@ -11,10 +11,10 @@ import android.view.View
 import android.widget.GridLayout
 import android.widget.ImageView
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import com.example.flowcopy.R
 
-class FirstGameActivity : AppCompatActivity() {
+class SecondGameActivity : AppCompatActivity() {
+
 
     private lateinit var resetImg: ImageView
     private lateinit var closeBtn: ImageView
@@ -22,12 +22,14 @@ class FirstGameActivity : AppCompatActivity() {
     private lateinit var pointsInitial: Array<Array<Int>>
     private lateinit var pointsCurrent: Array<Array<Int>>
     private lateinit var pointsFinal: Array<Array<Int>>
-    private val pointColors = intArrayOf(Color.GRAY, Color.RED, Color.GREEN, Color.BLUE, Color.YELLOW)
+    private val pointColors = intArrayOf(Color.GRAY, Color.RED, Color.GREEN, Color.BLUE, Color.YELLOW, Color.WHITE)
 
     private val viewIds = arrayOf(
-        R.id.view10, R.id.view11, R.id.view12,
-        R.id.view13, R.id.view14, R.id.view15,
-        R.id.view16, R.id.view17, R.id.view18
+        R.id.N2view1, R.id.N2view2, R.id.N2view3, R.id.N2view4, R.id.N2view5,
+        R.id.N2view6, R.id.N2view7,R.id.N2view8, R.id.N2view9, R.id.N2view10,
+        R.id.N2view11, R.id.N2view12, R.id.N2view13, R.id.N2view14, R.id.N2view15,
+        R.id.N2view16, R.id.N2view17, R.id.N2view18, R.id.N2view19, R.id.N2view20,
+        R.id.N2view21, R.id.N2view22, R.id.N2view23, R.id.N2view24, R.id.N2view25
     )
 
     private var startPoint: View? = null
@@ -36,16 +38,17 @@ class FirstGameActivity : AppCompatActivity() {
     @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_first_game)
+        setContentView(R.layout.activity_second_game)
 
-        resetImg = findViewById(R.id.resetView)
+
+        resetImg = findViewById(R.id.N2resetView)
 
         resetImg.setOnClickListener(){
             pointsCurrent = pointsInitial
             initializeGrid()
         }
 
-        closeBtn = findViewById(R.id.backView)
+        closeBtn = findViewById(R.id.N2backView)
 
         closeBtn.setOnClickListener(){
             finish()
@@ -53,15 +56,19 @@ class FirstGameActivity : AppCompatActivity() {
 
         gridLayout = findViewById(R.id.gridLayout)
         pointsInitial = arrayOf(
-            arrayOf(1, 2, 0),
-            arrayOf(0, 3, 2),
-            arrayOf(1, 0, 3)
+            arrayOf(1, 0, 2, 0, 4),
+            arrayOf(0, 0, 3, 0, 5),
+            arrayOf(0, 0, 0, 0, 0),
+            arrayOf(0, 2, 0, 4, 0),
+            arrayOf(0, 1, 3, 5, 0)
         )
         pointsCurrent = pointsInitial.copyOf()
         pointsFinal = arrayOf(
-            arrayOf(1, 2, 2),
-            arrayOf(1, 3, 2),
-            arrayOf(1, 3, 3)
+            arrayOf(1, 2, 2, 4, 4),
+            arrayOf(1, 2, 3, 4, 5),
+            arrayOf(1, 2, 3, 4, 5),
+            arrayOf(1, 2, 3, 4, 5),
+            arrayOf(1, 1, 3, 5, 5)
         )
 
         initializeGrid()
@@ -140,9 +147,11 @@ class FirstGameActivity : AppCompatActivity() {
                 val startCol = viewIds.indexOf(startPoint!!.id) % gridLayout.columnCount
 
                 pointsInitial = arrayOf(
-                    arrayOf(1, 2, 0),
-                    arrayOf(0, 3, 2),
-                    arrayOf(1, 0, 3)
+                    arrayOf(1, 0, 2, 0, 4),
+                    arrayOf(0, 0, 3, 0, 5),
+                    arrayOf(0, 0, 0, 0, 0),
+                    arrayOf(0, 2, 0, 4, 0),
+                    arrayOf(0, 1, 3, 5, 0)
                 )
                 // Altera o valor na matriz atual apenas se o valor na matriz inicial for 0
                 if (pointsInitial[endRow][endCol] == 0) {
@@ -185,4 +194,3 @@ class FirstGameActivity : AppCompatActivity() {
         }
     }
 }
-

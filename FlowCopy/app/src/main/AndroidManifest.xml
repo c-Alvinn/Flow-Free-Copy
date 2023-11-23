@@ -13,6 +13,12 @@
         android:theme="@style/Theme.FlowCopy"
         tools:targetApi="31">
         <activity
+            android:name=".play.games.ThirdGameActivity"
+            android:exported="false" />
+        <activity
+            android:name=".play.games.SecondGameActivity"
+            android:exported="false" />
+        <activity
             android:name=".login.RegisterActivity"
             android:exported="false" />
         <activity

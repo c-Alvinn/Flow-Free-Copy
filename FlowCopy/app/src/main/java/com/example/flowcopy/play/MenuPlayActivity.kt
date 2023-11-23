@@ -7,6 +7,7 @@ import com.example.flowcopy.R
 import com.example.flowcopy.databinding.ActivityMenuBinding
 import com.example.flowcopy.databinding.ActivityMenuPlayBinding
 import com.example.flowcopy.play.games.FirstGameActivity
+import com.example.flowcopy.play.games.SecondGameActivity
 
 class MenuPlayActivity : AppCompatActivity() {
 
@@ -17,8 +18,16 @@ class MenuPlayActivity : AppCompatActivity() {
         binding = ActivityMenuPlayBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.backView.setOnClickListener(){
+            finish()
+        }
+
         binding.btnGame1.setOnClickListener(){
             val intent = Intent(this, FirstGameActivity::class.java)
+            startActivity(intent)
+        }
+        binding.btnGame2.setOnClickListener(){
+            val intent = Intent(this, SecondGameActivity::class.java)
             startActivity(intent)
         }
     }
