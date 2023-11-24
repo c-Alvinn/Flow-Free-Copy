@@ -11,6 +11,8 @@ import android.view.MotionEvent
 import android.view.View
 import android.widget.GridLayout
 import android.widget.ImageView
+import android.widget.LinearLayout
+import android.widget.TextView
 import android.widget.Toast
 import com.example.flowcopy.R
 
@@ -19,6 +21,9 @@ class SecondGameActivity : AppCompatActivity() {
 
     private lateinit var resetImg: ImageView
     private lateinit var closeBtn: ImageView
+    private lateinit var popUp: LinearLayout
+    private lateinit var nextGame: TextView
+    private lateinit var backPopUp: TextView
     private lateinit var gridLayout: GridLayout
     private lateinit var pointsInitial: Array<Array<Int>>
     private lateinit var pointsCurrent: Array<Array<Int>>
@@ -115,11 +120,18 @@ class SecondGameActivity : AppCompatActivity() {
 
                         if (checkPuzzleCompletion()) {
                             // Verifica se o quebra-cabeça foi concluído
-                            Toast.makeText(this, "Parabéns! Você concluiu o quebra-cabeça.", Toast.LENGTH_SHORT).show()
-                            Thread.sleep(2000)
-                            val intent = Intent(this, ThirdGameActivity::class.java)
-                            startActivity(intent)
-                            finish()
+                            popUp = findViewById(R.id.popUp)
+                            nextGame = findViewById(R.id.nextGame)
+                            backPopUp = findViewById(R.id.backPopUp)
+                            popUp.visibility = View.VISIBLE
+                            nextGame.setOnClickListener(){
+                                val intent = Intent(this, ThirdGameActivity::class.java)
+                                startActivity(intent)
+                                finish()
+                            }
+                            backPopUp.setOnClickListener(){
+                                finish()
+                            }
                         }
                     }
                 }

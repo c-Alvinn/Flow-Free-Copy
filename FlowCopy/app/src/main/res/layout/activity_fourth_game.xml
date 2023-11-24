@@ -234,4 +234,41 @@
         android:clickable="true"
         android:focusable="true" />
 
+    <LinearLayout
+        android:id="@+id/popUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="15dp"
+        android:background="@drawable/pop_up_background"
+        android:visibility="invisible"
+        android:layout_centerInParent="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Parabéns!\nVocê concluiu o nível 4"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:padding="10dp"/>
+
+        <TextView
+            android:id="@+id/nextGame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Próximo Nível"
+            style="@style/LoginButtonStyle"/>
+
+        <TextView
+            android:id="@+id/backPopUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Voltar ao Menu"
+            style="@style/LoginButtonStyle"/>
+
+    </LinearLayout>
+
 </RelativeLayout>

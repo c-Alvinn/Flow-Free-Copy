@@ -3,8 +3,6 @@ package com.example.flowcopy.play
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.flowcopy.R
-import com.example.flowcopy.databinding.ActivityMenuBinding
 import com.example.flowcopy.databinding.ActivityMenuPlayBinding
 import com.example.flowcopy.play.games.FifthGameActivity
 import com.example.flowcopy.play.games.FirstGameActivity
