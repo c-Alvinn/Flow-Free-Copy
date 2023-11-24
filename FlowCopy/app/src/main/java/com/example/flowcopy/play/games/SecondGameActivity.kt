@@ -1,6 +1,7 @@
 package com.example.flowcopy.play.games
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
@@ -25,11 +26,11 @@ class SecondGameActivity : AppCompatActivity() {
     private val pointColors = intArrayOf(Color.GRAY, Color.RED, Color.GREEN, Color.BLUE, Color.YELLOW, Color.WHITE)
 
     private val viewIds = arrayOf(
-        R.id.N2view1, R.id.N2view2, R.id.N2view3, R.id.N2view4, R.id.N2view5,
-        R.id.N2view6, R.id.N2view7,R.id.N2view8, R.id.N2view9, R.id.N2view10,
-        R.id.N2view11, R.id.N2view12, R.id.N2view13, R.id.N2view14, R.id.N2view15,
-        R.id.N2view16, R.id.N2view17, R.id.N2view18, R.id.N2view19, R.id.N2view20,
-        R.id.N2view21, R.id.N2view22, R.id.N2view23, R.id.N2view24, R.id.N2view25
+        R.id.view1, R.id.view2, R.id.view3, R.id.view4, R.id.view5,
+        R.id.view6, R.id.view7, R.id.view8, R.id.view9, R.id.view10,
+        R.id.view11, R.id.view12, R.id.view13, R.id.view14, R.id.view15,
+        R.id.view16, R.id.view17, R.id.view18, R.id.view19, R.id.view20,
+        R.id.view21, R.id.view22, R.id.view23, R.id.view24, R.id.view25
     )
 
     private var startPoint: View? = null
@@ -115,6 +116,10 @@ class SecondGameActivity : AppCompatActivity() {
                         if (checkPuzzleCompletion()) {
                             // Verifica se o quebra-cabeça foi concluído
                             Toast.makeText(this, "Parabéns! Você concluiu o quebra-cabeça.", Toast.LENGTH_SHORT).show()
+                            Thread.sleep(2000)
+                            val intent = Intent(this, ThirdGameActivity::class.java)
+                            startActivity(intent)
+                            finish()
                         }
                     }
                 }
@@ -175,22 +180,4 @@ class SecondGameActivity : AppCompatActivity() {
         return true
     }
 
-    private fun printMatrix() {
-        Log.d("Matrix", "Current Matrix:")
-        for (row in pointsCurrent) {
-            for (value in row) {
-                Log.d("Matrix", "$value ")
-            }
-            Log.d("Matrix", "")
-        }
-    }
-    private fun printMatrixI() {
-        Log.d("Matrix", "Initial Matrix:")
-        for (row in pointsInitial) {
-            for (value in row) {
-                Log.d("Matrix", "$value ")
-            }
-            Log.d("Matrix", "")
-        }
-    }
 }
