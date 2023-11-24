@@ -6,14 +6,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".login.RegisterActivity">
+    tools:context=".login.ChangeActivity">
 
     <!-- Título -->
     <TextView
         android:id="@+id/textTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Register"
+        android:text="Change Data"
         android:textSize="37sp"
         android:padding="10dp"
         android:textColor="@color/white"
@@ -52,7 +52,6 @@
         <EditText
             android:id="@+id/editTextPassword"
             style="@style/LoginEditTextStyle"
-            android:inputType="textPassword"
             android:hint="Senha"
             android:layout_marginTop="10dp"
             android:autofillHints="password" />
@@ -61,7 +60,7 @@
         <TextView
             android:id="@+id/buttonRegister"
             style="@style/LoginButtonStyle"
-            android:text="Registrar"
+            android:text="Alterar"
             android:layout_marginTop="30dp"/>
     </LinearLayout>
 
@@ -75,17 +74,5 @@
         android:layout_marginBottom="10dp"
         android:clickable="true"
         android:focusable="true" />
-
-    <TextView
-        android:id="@+id/popUp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="60dp"
-        android:text="popUp"
-        android:visibility="invisible"
-        android:background="@drawable/pop_up_background"
-        style="@style/LoginButtonStyle"/>
 
 </RelativeLayout>

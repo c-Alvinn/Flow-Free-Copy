@@ -83,8 +83,8 @@ class DAO_Conta(banco : MyDataBaseHelper)
         return flag
     }
 
-    fun retornarConta(username : String, password : String): Conta{
-        var conta: Conta
+    fun retornarConta(username : String, password : String): Conta? {
+        var conta: Conta? = null
         val db_leitura = this.banco.readableDatabase
         var cursor = db_leitura.rawQuery("select * from Conta",null)
         with(cursor) {

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".login.AccountActivity">
+
+    <!-- Título -->
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Account"
+        android:textSize="37sp"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textAllCaps="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"/>
+
+    <!-- Container para centralizar os botões verticalmente -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerVertical="true"
+        android:gravity="center">
+
+
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Usuario"
+            style="@style/CustomButton"/>
+
+
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            style="@style/CustomButton"/>
+
+
+        <TextView
+            android:id="@+id/btnChange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alterar Dados"
+            android:textSize="25sp"
+            style="@style/LoginButtonStyle"/>
+
+        <TextView
+            android:id="@+id/btnExit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sair da conta"
+            android:textSize="25sp"
+            style="@style/LoginButtonStyle"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/backView"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/back_icon"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:clickable="true"
+        android:focusable="true" />
+
+</RelativeLayout>

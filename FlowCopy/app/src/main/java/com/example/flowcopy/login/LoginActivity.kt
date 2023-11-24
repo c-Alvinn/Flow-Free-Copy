@@ -25,6 +25,10 @@ class LoginActivity : AppCompatActivity() {
         val banco_contas = MyDataBaseHelper(applicationContext)
         val operacoesBanco = DAO_Conta(banco_contas)
 
+        binding.backView.setOnClickListener(){
+            finish()
+        }
+
         binding.buttonLogin.setOnClickListener {
             //Validar login.
             val username = binding.editTextUsername.text.toString()
