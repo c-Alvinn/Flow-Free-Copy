@@ -30,20 +30,18 @@
         android:layout_centerVertical="true"
         android:gravity="center">
 
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Olá,"
+            style="@style/CustomButton"/>
 
         <TextView
             android:id="@+id/username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Usuario"
-            style="@style/CustomButton"/>
-
-
-        <TextView
-            android:id="@+id/email"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Email"
             style="@style/CustomButton"/>
 
 

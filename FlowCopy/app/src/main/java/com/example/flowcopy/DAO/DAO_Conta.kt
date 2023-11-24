@@ -9,9 +9,9 @@ class DAO_Conta(banco : MyDataBaseHelper)
     init {
         this.banco = banco
     }
-    fun inserirConta(conta : Conta){
+    fun inserirConta(conta : Conta): Boolean{
         val db_insercao = this.banco.writableDatabase
-        var valores = ContentValues().apply{
+        val valores = ContentValues().apply{
             put("id", conta.id)
             put("nome", conta.nome)
             put("email", conta.email)
@@ -19,11 +19,15 @@ class DAO_Conta(banco : MyDataBaseHelper)
         }
         val confirmaInsercao = db_insercao?.insert("Conta",  null, valores)
         Log.i("Teste","Inserção: "+confirmaInsercao)
+        if (confirmaInsercao?.toInt()!! <= 0){
+            return false
+        }
+        return true
     }
     fun mostrarContas(): List<Conta>{
         val listaContas = ArrayList<Conta>()
         val db_leitura = this.banco.readableDatabase
-        var cursor = db_leitura.rawQuery("select * from Conta",null)
+        val cursor = db_leitura.rawQuery("select * from Conta",null)
         with(cursor) {
             while (moveToNext()) {
                 val id = getInt(getColumnIndexOrThrow("id"))
@@ -38,9 +42,9 @@ class DAO_Conta(banco : MyDataBaseHelper)
         cursor.close()
         return(listaContas)
     }
-    fun atualizarConta(conta : Conta){
+    fun atualizarConta(conta : Conta): Boolean{
         val db_atualizacao = this.banco.writableDatabase
-        var valores = ContentValues().apply{
+        val valores = ContentValues().apply{
             put("nome", conta.nome)
             put("email", conta.email)
             put("senha", conta.senha)
@@ -49,6 +53,10 @@ class DAO_Conta(banco : MyDataBaseHelper)
         val condicao = "id = "+conta.id
         val confirmaAtualizacao = db_atualizacao.update("Conta", valores, condicao, null)
         Log.i("Teste", "Atualização: $confirmaAtualizacao")
+        if (confirmaAtualizacao <= 0){
+            return false
+        }
+        return true
     }
     fun excluirConta(conta : Conta){
         val db_exclusao = this.banco.readableDatabase
@@ -59,7 +67,7 @@ class DAO_Conta(banco : MyDataBaseHelper)
     fun validarLogin(username : String, password : String): Boolean{
         var flag : Boolean = true
         val db_leitura = this.banco.readableDatabase
-        var cursor = db_leitura.rawQuery("select * from Conta",null)
+        val cursor = db_leitura.rawQuery("select * from Conta",null)
         with(cursor) {
             while (moveToNext()) {
                 val id = getInt(getColumnIndexOrThrow("id"))
@@ -86,7 +94,7 @@ class DAO_Conta(banco : MyDataBaseHelper)
     fun retornarConta(username : String, password : String): Conta? {
         var conta: Conta? = null
         val db_leitura = this.banco.readableDatabase
-        var cursor = db_leitura.rawQuery("select * from Conta",null)
+        val cursor = db_leitura.rawQuery("select * from Conta",null)
         with(cursor) {
             while (moveToNext()) {
                 val id = getInt(getColumnIndexOrThrow("id"))
@@ -109,7 +117,7 @@ class DAO_Conta(banco : MyDataBaseHelper)
     fun retornarContaLogada(): Conta? {
         var conta: Conta? = null
         val db_leitura = this.banco.readableDatabase
-        var cursor = db_leitura.rawQuery("select * from Conta",null)
+        val cursor = db_leitura.rawQuery("select * from Conta",null)
         with(cursor) {
             while (moveToNext()) {
                 val id = getInt(getColumnIndexOrThrow("id"))

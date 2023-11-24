@@ -7,8 +7,6 @@ import android.widget.EditText
 import com.example.flowcopy.DAO.Conta
 import com.example.flowcopy.DAO.DAO_Conta
 import com.example.flowcopy.DAO.MyDataBaseHelper
-import com.example.flowcopy.R
-import com.example.flowcopy.databinding.ActivityLoginBinding
 import com.example.flowcopy.databinding.ActivityRegisterBinding
 
 class RegisterActivity : AppCompatActivity() {
@@ -35,12 +33,19 @@ class RegisterActivity : AppCompatActivity() {
 
             if (username != "" && email != "" && password != "") {
                 //Inserção da nova Conta no banco de dados.
-                operacoesBanco.inserirConta(Conta(gerarID(),username,email,password,0))
-                limparCampos(binding.editTextUsername,binding.editTextEmail, binding.editTextPassword)
-                val msg = "Conta criada com sucesso!"
-                binding.popUp.text = msg
-                binding.popUp.visibility = View.VISIBLE
-                binding.popUp.postDelayed({binding.popUp.visibility = View.INVISIBLE},2000)
+                if (operacoesBanco.inserirConta(Conta(gerarID(),username,email,password,0))){
+                    limparCampos(binding.editTextUsername,binding.editTextEmail, binding.editTextPassword)
+                    val msg = "Conta criada com sucesso!"
+                    binding.popUp.text = msg
+                    binding.popUp.visibility = View.VISIBLE
+                    binding.popUp.postDelayed({binding.popUp.visibility = View.INVISIBLE},2000)
+                }else {
+                    val msg = "Erro na Inserção.\nTente novamente."
+                    binding.popUp.text = msg
+                    binding.popUp.visibility = View.VISIBLE
+                    binding.popUp.postDelayed({binding.popUp.visibility = View.INVISIBLE},2000)
+                }
+
             }else {
                 val msg = "Algo está incorreto.\nVerifique e tente novamente."
                 binding.popUp.text = msg
