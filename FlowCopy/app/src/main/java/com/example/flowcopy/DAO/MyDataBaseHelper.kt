@@ -19,8 +19,8 @@ class MyDataBaseHelper(context: Context) : SQLiteOpenHelper(context, "BancoConta
                     "${id} INTEGER PRIMARY KEY," +
                     "${nome} TEXT," +
                     "${email} TEXT," +
-                    "${senha} TEXT)," +
-                    "${logado} INTEGER"
+                    "${senha} TEXT," +
+                    "${logado} INTEGER)"
         db.execSQL(SQL_criacao)
     }
     override fun onUpgrade(db: SQLiteDatabase, versaoAntiga: Int, novaVersao: Int) {
