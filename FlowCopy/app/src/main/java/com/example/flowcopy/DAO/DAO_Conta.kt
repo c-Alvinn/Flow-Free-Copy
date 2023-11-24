@@ -106,4 +106,27 @@ class DAO_Conta(banco : MyDataBaseHelper)
         return conta
     }
 
+    fun retornarContaLogada(): Conta? {
+        var conta: Conta? = null
+        val db_leitura = this.banco.readableDatabase
+        var cursor = db_leitura.rawQuery("select * from Conta",null)
+        with(cursor) {
+            while (moveToNext()) {
+                val id = getInt(getColumnIndexOrThrow("id"))
+                val nome = getString(getColumnIndexOrThrow("nome"))
+                val email = getString(getColumnIndexOrThrow("email"))
+                val senha = getString(getColumnIndexOrThrow("senha"))
+                val logado = getInt(getColumnIndexOrThrow("logado"))
+                android.util.Log.i("Teste","ID: "+id+" - Nome: "+nome+ " - Email: "+email+ " - Senha: "+senha+" - Logado: "+logado)
+
+                if(logado == 1){
+                    android.util.Log.i("Teste", "Usuario encontrado: " + nome + " ")
+                    conta = Conta(id,nome,email,senha,logado)
+                }
+            }
+        }
+        cursor.close()
+        return conta
+    }
+
 }
