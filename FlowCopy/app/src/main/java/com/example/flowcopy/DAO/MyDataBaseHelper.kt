@@ -11,12 +11,16 @@ class MyDataBaseHelper(context: Context) : SQLiteOpenHelper(context, "BancoConta
         val nomeTabela = "Conta"
         val id = "id"
         val nome = "nome"
+        val email = "email"
         val senha = "senha"
+        val logado = "logado"
         val SQL_criacao =
             "CREATE TABLE ${nomeTabela} (" +
                     "${id} INTEGER PRIMARY KEY," +
                     "${nome} TEXT," +
-                    "${senha} TEXT)"
+                    "${email} TEXT," +
+                    "${senha} TEXT)," +
+                    "${logado} INTEGER"
         db.execSQL(SQL_criacao)
     }
     override fun onUpgrade(db: SQLiteDatabase, versaoAntiga: Int, novaVersao: Int) {
