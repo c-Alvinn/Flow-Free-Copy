@@ -83,6 +83,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="60dp"
+        android:textAlignment="center"
         android:text="popUp"
         android:visibility="invisible"
         android:background="@drawable/pop_up_background"

@@ -75,4 +75,17 @@
         android:clickable="true"
         android:focusable="true" />
 
+    <TextView
+        android:id="@+id/popUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="60dp"
+        android:textAlignment="center"
+        android:text="popUp"
+        android:visibility="invisible"
+        android:background="@drawable/pop_up_background"
+        style="@style/LoginButtonStyle"/>
+
 </RelativeLayout>
