@@ -137,4 +137,64 @@ class DAO_Conta(banco : MyDataBaseHelper)
         return conta
     }
 
+    fun logarConta(conta : Conta): Boolean {
+        val db_atualizacao = this.banco.writableDatabase
+        val db_leitura = this.banco.readableDatabase
+        val cursor = db_leitura.rawQuery("select * from Conta",null)
+        with(cursor) {
+            while (moveToNext()) {
+                val id = getInt(getColumnIndexOrThrow("id"))
+                val nome = getString(getColumnIndexOrThrow("nome"))
+                val email = getString(getColumnIndexOrThrow("email"))
+                val senha = getString(getColumnIndexOrThrow("senha"))
+                val logado = getInt(getColumnIndexOrThrow("logado"))
+                android.util.Log.i("Teste","ID: "+id+" - Nome: "+nome+ " - Email: "+email+ " - Senha: "+senha+" - Logado: "+logado)
+
+                if(id == conta.id){
+                    val valores = ContentValues().apply{
+                        put("logado", 1)
+                    }
+                    val condicao = "id = "+conta.id
+                    val confirmaAtualizacao = db_atualizacao.update("Conta", valores, condicao, null)
+                    Log.i("Teste", "Atualização: $confirmaAtualizacao")
+                    if (confirmaAtualizacao <= 0){
+                        return false
+                    }
+                }
+            }
+        }
+        cursor.close()
+        return true
+    }
+
+    fun deslogarConta(conta : Conta): Boolean {
+        val db_atualizacao = this.banco.writableDatabase
+        val db_leitura = this.banco.readableDatabase
+        val cursor = db_leitura.rawQuery("select * from Conta",null)
+        with(cursor) {
+            while (moveToNext()) {
+                val id = getInt(getColumnIndexOrThrow("id"))
+                val nome = getString(getColumnIndexOrThrow("nome"))
+                val email = getString(getColumnIndexOrThrow("email"))
+                val senha = getString(getColumnIndexOrThrow("senha"))
+                val logado = getInt(getColumnIndexOrThrow("logado"))
+                android.util.Log.i("Teste","ID: "+id+" - Nome: "+nome+ " - Email: "+email+ " - Senha: "+senha+" - Logado: "+logado)
+
+                if(id == conta.id){
+                    val valores = ContentValues().apply{
+                        put("logado", 0)
+                    }
+                    val condicao = "id = "+conta.id
+                    val confirmaAtualizacao = db_atualizacao.update("Conta", valores, condicao, null)
+                    Log.i("Teste", "Atualização: $confirmaAtualizacao")
+                    if (confirmaAtualizacao <= 0){
+                        return false
+                    }
+                }
+            }
+        }
+        cursor.close()
+        return true
+    }
+
 }
