@@ -166,7 +166,6 @@ class DAO_Conta(banco : MyDataBaseHelper)
         cursor.close()
         return true
     }
-
     fun deslogarConta(conta : Conta): Boolean {
         val db_atualizacao = this.banco.writableDatabase
         val db_leitura = this.banco.readableDatabase
@@ -196,5 +195,18 @@ class DAO_Conta(banco : MyDataBaseHelper)
         cursor.close()
         return true
     }
-
+    fun retornarUltimoID(): Int{
+        val db_leitura = this.banco.readableDatabase
+        val cursor = db_leitura.rawQuery("select * from Conta",null)
+        var ultimoId = 0
+        with(cursor) {
+            while (moveToNext()) {
+                val id = getInt(getColumnIndexOrThrow("id"))
+                ultimoId = id
+                android.util.Log.i("Teste","ID: "+id)
+            }
+        }
+        cursor.close()
+        return ultimoId
+    }
 }
