@@ -6,6 +6,7 @@ import android.os.Bundle
 import com.example.flowcopy.DAO.Conta
 import com.example.flowcopy.DAO.DAO_Conta
 import com.example.flowcopy.DAO.MyDataBaseHelper
+import com.example.flowcopy.MenuActivity
 import com.example.flowcopy.databinding.ActivityAccountBinding
 
 class AccountActivity : AppCompatActivity() {
@@ -32,10 +33,16 @@ class AccountActivity : AppCompatActivity() {
         }
 
         binding.btnExit.setOnClickListener(){
-
+            if (operacoesBanco.deslogarConta(conta!!)){
+                val intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
         }
 
         binding.backView.setOnClickListener(){
+            val intent = Intent(this, MenuActivity::class.java)
+            startActivity(intent)
             finish()
         }
 

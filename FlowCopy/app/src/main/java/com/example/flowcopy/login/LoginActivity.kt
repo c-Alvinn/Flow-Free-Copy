@@ -9,7 +9,9 @@ import android.widget.EditText
 import com.example.flowcopy.DAO.Conta
 import com.example.flowcopy.DAO.DAO_Conta
 import com.example.flowcopy.DAO.MyDataBaseHelper
+import com.example.flowcopy.MenuActivity
 import com.example.flowcopy.databinding.ActivityLoginBinding
+import com.example.flowcopy.play.games.FirstGameActivity
 
 class LoginActivity : AppCompatActivity() {
 
@@ -24,9 +26,6 @@ class LoginActivity : AppCompatActivity() {
         val banco_contas = MyDataBaseHelper(applicationContext)
         val operacoesBanco = DAO_Conta(banco_contas)
 
-        binding.backView.setOnClickListener(){
-            finish()
-        }
 
         binding.buttonLogin.setOnClickListener {
             //Validar login.
@@ -35,18 +34,28 @@ class LoginActivity : AppCompatActivity() {
 
             if (username != "" && password != ""){
                 if (operacoesBanco.validarLogin(username,password)) {
-                    //ALTERAR STATUS DE LOGADO DO USUARIO
                     val conta : Conta? = operacoesBanco.retornarConta(username,password)
-                    val confirmarInsercao : Boolean = operacoesBanco.logarConta(conta)
-                    limparCampos(binding.editTextUsername, binding.editTextPassword)
-                    val msg = "Olá $username!\nSeja bem-vindo!"
-                    binding.popUp.text = msg
-                    binding.popUp.visibility = View.VISIBLE
-                    binding.popUp.postDelayed({binding.popUp.visibility = View.INVISIBLE},2000)
-                    binding.root.postDelayed({finish()}, 2200)
-                    Log.i("Teste Insercao","Insercao: "+confirmarInsercao)
+                    if (operacoesBanco.logarConta(conta!!)){
+                        limparCampos(binding.editTextUsername, binding.editTextPassword)
+                        val msg = "Olá $username!\nSeja bem-vindo!"
+                        binding.popUp.text = msg
+                        binding.popUp.visibility = View.VISIBLE
+                        binding.popUp.postDelayed({binding.popUp.visibility = View.INVISIBLE},2000)
+                        val intent = Intent(this, MenuActivity::class.java)
+                        binding.root.postDelayed({startActivity(intent)}, 2200)
+                        binding.root.postDelayed({finish()}, 2200)
+                    }else {
+                        val msg = "Erro ao executar o Login\nTente novamente."
+                        binding.popUp.text = msg
+                        binding.popUp.visibility = View.VISIBLE
+                        binding.popUp.postDelayed(
+                            { binding.popUp.visibility = View.INVISIBLE },
+                            2000
+                        )
+                    }
+
                 }else {
-                    val msg = "Login inválido.\nVerifique suas credenciais e tente novamente."
+                    val msg = "Erro ao executar o Login\nTente novamente."
                     binding.popUp.text = msg
                     binding.popUp.visibility = View.VISIBLE
                     binding.popUp.postDelayed({binding.popUp.visibility = View.INVISIBLE},2000)

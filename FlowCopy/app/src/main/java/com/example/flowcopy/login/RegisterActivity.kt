@@ -57,7 +57,7 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     companion object {
-        private var ultimoIdGerado = 0
+        private var ultimoIdGerado = 3
 
         fun gerarID(): Int {
             ultimoIdGerado++

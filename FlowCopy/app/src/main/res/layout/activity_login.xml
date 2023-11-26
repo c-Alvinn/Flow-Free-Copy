@@ -64,17 +64,6 @@
             android:layout_marginTop="30dp"/>
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/backView"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:background="@drawable/back_icon"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="10dp"
-        android:clickable="true"
-        android:focusable="true" />
-
     <TextView
         android:id="@+id/popUp"
         android:layout_width="wrap_content"
