@@ -30,10 +30,11 @@ class RegisterActivity : AppCompatActivity() {
             val username: String = binding.editTextUsername.text.toString()
             val email: String = binding.editTextEmail.text.toString()
             val password: String = binding.editTextPassword.text.toString()
+            val id = operacoesBanco.retornarUltimoID() + 1
 
             if (username != "" && email != "" && password != "") {
                 //Inserção da nova Conta no banco de dados.
-                if (operacoesBanco.inserirConta(Conta(gerarID(),username,email,password,0))){
+                if (operacoesBanco.inserirConta(Conta(id,username,email,password,0))){
                     limparCampos(binding.editTextUsername,binding.editTextEmail, binding.editTextPassword)
                     val msg = "Conta criada com sucesso!"
                     binding.popUp.text = msg
@@ -53,15 +54,6 @@ class RegisterActivity : AppCompatActivity() {
                 binding.popUp.postDelayed({binding.popUp.visibility = View.INVISIBLE},2000)
             }
 
-        }
-    }
-
-    companion object {
-        private var ultimoIdGerado = 3
-
-        fun gerarID(): Int {
-            ultimoIdGerado++
-            return ultimoIdGerado
         }
     }
 
