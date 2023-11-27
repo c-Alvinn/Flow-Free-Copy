@@ -54,6 +54,14 @@
             style="@style/LoginButtonStyle"/>
 
         <TextView
+            android:id="@+id/btnRemove"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Excluir Sua Conta"
+            android:textSize="20sp"
+            style="@style/LoginButtonStyle"/>
+
+        <TextView
             android:id="@+id/btnExit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -65,13 +73,59 @@
 
     <ImageView
         android:id="@+id/backView"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:background="@drawable/back_icon"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="10dp"
+        android:layout_marginStart="5dp"
         android:clickable="true"
-        android:focusable="true" />
+        android:focusable="true"
+        android:contentDescription="Come Back Button" />
+
+    <LinearLayout
+        android:id="@+id/popUpRemove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="20dp"
+        android:visibility="invisible"
+        android:background="@drawable/pop_up_background">
+
+        <TextView
+            android:id="@+id/confirmText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Tem certeza que deseja\n excluir sua conta?"
+            android:textSize="25sp"
+            android:padding="15dp"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/btnYes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sim"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            style="@style/LoginButtonStyle"/>
+
+        <TextView
+            android:id="@+id/btnNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Não"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            style="@style/LoginButtonStyle"/>
+
+    </LinearLayout>
+
+
 
 </RelativeLayout>

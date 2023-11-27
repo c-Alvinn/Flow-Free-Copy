@@ -3,6 +3,7 @@ package com.example.flowcopy.login
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import com.example.flowcopy.DAO.Conta
 import com.example.flowcopy.DAO.DAO_Conta
 import com.example.flowcopy.DAO.MyDataBaseHelper
@@ -44,6 +45,20 @@ class AccountActivity : AppCompatActivity() {
             val intent = Intent(this, MenuActivity::class.java)
             startActivity(intent)
             finish()
+        }
+
+        binding.btnRemove.setOnClickListener(){
+            binding.popUpRemove.visibility = View.VISIBLE
+
+            binding.btnYes.setOnClickListener(){
+                operacoesBanco.excluirConta(operacoesBanco.retornarContaLogada()!!)
+                val intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+            binding.btnNo.setOnClickListener(){
+                binding.popUpRemove.visibility = View.INVISIBLE
+            }
         }
 
     }

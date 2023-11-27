@@ -52,4 +52,17 @@
 
     </LinearLayout>
 
+    <ImageView
+        android:id="@+id/iftmIcon"
+        android:layout_width="80dp"
+        android:layout_height="110dp"
+        android:background="@drawable/iftm_icon"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="5dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:contentDescription="Come Back Button" />
+
 </RelativeLayout>

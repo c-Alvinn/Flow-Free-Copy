@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".AboutActivity">
+
+    <!-- Título -->
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="About"
+        android:textSize="37sp"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textAllCaps="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:autoLink="web"
+        android:clickable="true"
+        android:focusable="true" />
+
+    <LinearLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        style="@style/LoginEditTextStyle">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/game_copy"
+            android:textAlignment="center"
+            android:background="@color/transparent"
+            style="@style/LoginEditTextStyle"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/game_copy2"
+            android:textAlignment="center"
+            android:background="@color/transparent"
+            style="@style/LoginEditTextStyle"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/developer_copy"
+            android:textAlignment="center"
+            android:background="@color/transparent"
+            style="@style/LoginEditTextStyle"/>
+
+        <LinearLayout
+            android:id="@+id/layoutLinks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="start">
+
+
+            <LinearLayout
+                android:id="@+id/alvaroLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:src="@drawable/github_icon"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Álvaro Dias"
+                    android:textAlignment="center"
+                    android:background="@color/transparent"
+                    style="@style/LoginEditTextStyle"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/gustavoLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:src="@drawable/github_icon"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gustavo Machado"
+                    android:textAlignment="center"
+                    android:background="@color/transparent"
+                    style="@style/LoginEditTextStyle"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/iftmLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:clickable="true"
+                android:gravity="center"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:src="@drawable/iftm_icon"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="IFTM"
+                    android:textAlignment="center"
+                    android:background="@color/transparent"
+                    style="@style/LoginEditTextStyle"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/backView"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/back_icon"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="5dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:contentDescription="Come Back Button" />
+
+</RelativeLayout>

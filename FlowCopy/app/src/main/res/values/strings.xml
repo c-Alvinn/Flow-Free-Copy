@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Flow Copy</string>
+    <string name="game_copy">    O Flow é um jogo que consiste em conectar\nos pontos coloridos em um tabuleiro,\npreenchendo todo o tabuleiro sem deixar\nque as linhas se cruzem.\nFlow é um jogo cativante que combina\nsimplicidade com desafios crescentes,\ntornando-o adequado para jogadores\nde todas as idades.</string>
+    <string name="game_copy2">    Este jogo foi desenvolvido como\num Projeto de Extensão do curso de\nAnálise e Desenvolvimento de Sistemas\ndo IFTM - CAUPT.</string>
+    <string name="developer_copy">    Flow foi desenvolvido por Álvaro Dias e Gustavo Machado.\n\nLinks úteis:</string>
 </resources>

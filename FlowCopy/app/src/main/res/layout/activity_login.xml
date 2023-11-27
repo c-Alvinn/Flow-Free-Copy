@@ -73,6 +73,7 @@
         android:layout_marginBottom="60dp"
         android:textAlignment="center"
         android:text="popUp"
+        android:textSize="20sp"
         android:visibility="invisible"
         android:background="@drawable/pop_up_background"
         style="@style/LoginButtonStyle"/>

@@ -67,14 +67,16 @@
 
     <ImageView
         android:id="@+id/backView"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:background="@drawable/back_icon"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="10dp"
+        android:layout_marginStart="5dp"
         android:clickable="true"
-        android:focusable="true" />
+        android:focusable="true"
+        android:contentDescription="Come Back Button" />
 
     <TextView
         android:id="@+id/popUp"
@@ -85,6 +87,7 @@
         android:layout_marginBottom="60dp"
         android:textAlignment="center"
         android:text="popUp"
+        android:textSize="20sp"
         android:visibility="invisible"
         android:background="@drawable/pop_up_background"
         style="@style/LoginButtonStyle"/>
