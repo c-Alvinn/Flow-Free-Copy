@@ -1,7 +1,6 @@
 package com.example.flowcopy.play.games
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
@@ -14,12 +13,11 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import com.example.flowcopy.R
 
-class FifthGameActivity : AppCompatActivity() {
+class TwelfthGameActivity : AppCompatActivity() {
 
     private lateinit var resetImg: ImageView
     private lateinit var closeBtn: ImageView
     private lateinit var popUp: LinearLayout
-    private lateinit var nextGame: TextView
     private lateinit var backPopUp: TextView
     private lateinit var gridLayout: GridLayout
     private lateinit var pointsInitial: Array<Array<Int>>
@@ -28,11 +26,12 @@ class FifthGameActivity : AppCompatActivity() {
     private val pointColors = intArrayOf(Color.GRAY, Color.RED, Color.GREEN, Color.BLUE, Color.YELLOW, Color.MAGENTA, Color.CYAN, Color.WHITE)
 
     private val viewIds = arrayOf(
-        R.id.view1, R.id.view2, R.id.view3, R.id.view4, R.id.view5,
-        R.id.view6, R.id.view7, R.id.view8, R.id.view9, R.id.view10,
-        R.id.view11, R.id.view12, R.id.view13, R.id.view14, R.id.view15,
-        R.id.view16, R.id.view17, R.id.view18, R.id.view19, R.id.view20,
-        R.id.view21, R.id.view22, R.id.view23, R.id.view24, R.id.view25
+        R.id.view1, R.id.view2, R.id.view3, R.id.view4, R.id.view5, R.id.view6,
+        R.id.view7, R.id.view8, R.id.view9, R.id.view10, R.id.view11, R.id.view12,
+        R.id.view13, R.id.view14, R.id.view15, R.id.view16, R.id.view17, R.id.view18,
+        R.id.view19, R.id.view20, R.id.view21, R.id.view22, R.id.view23, R.id.view24,
+        R.id.view25, R.id.view26, R.id.view27, R.id.view28, R.id.view29, R.id.view30,
+        R.id.view31, R.id.view32, R.id.view33, R.id.view34, R.id.view35, R.id.view36,
     )
 
     private var startPoint: View? = null
@@ -42,7 +41,7 @@ class FifthGameActivity : AppCompatActivity() {
     @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_fifth_game)
+        setContentView(R.layout.activity_twelfth_game)
 
         resetImg = findViewById(R.id.resetView)
 
@@ -59,19 +58,21 @@ class FifthGameActivity : AppCompatActivity() {
 
         gridLayout = findViewById(R.id.gridLayout)
         pointsInitial = arrayOf(
-            arrayOf(1, 0, 2, 0, 4),
-            arrayOf(0, 0, 3, 0, 5),
-            arrayOf(0, 0, 0, 0, 0),
-            arrayOf(0, 2, 0, 4, 0),
-            arrayOf(0, 1, 3, 5, 0)
+            arrayOf(3, 0, 0, 0, 0, 0),
+            arrayOf(0, 0, 0, 0, 0, 0),
+            arrayOf(0, 0, 0, 0, 4, 0),
+            arrayOf(0, 0, 4, 2, 1, 0),
+            arrayOf(0, 2, 0, 1, 0, 0),
+            arrayOf(0, 0, 0, 3, 0, 0)
         )
         pointsCurrent = pointsInitial.copyOf()
         pointsFinal = arrayOf(
-            arrayOf(1, 2, 2, 4, 4),
-            arrayOf(1, 2, 3, 4, 5),
-            arrayOf(1, 2, 3, 4, 5),
-            arrayOf(1, 2, 3, 4, 5),
-            arrayOf(1, 1, 3, 5, 5)
+            arrayOf(3, 3, 3, 3, 3, 3),
+            arrayOf(4, 4, 4, 4, 4, 3),
+            arrayOf(4, 2, 2, 2, 4, 3),
+            arrayOf(4, 2, 4, 2, 1, 3),
+            arrayOf(4, 2, 4, 1, 1, 3),
+            arrayOf(4, 4, 4, 3, 3, 3)
         )
 
         initializeGrid()
@@ -118,14 +119,8 @@ class FifthGameActivity : AppCompatActivity() {
                         if (checkPuzzleCompletion()) {
                             // Verifica se o quebra-cabeça foi concluído
                             popUp = findViewById(R.id.popUp)
-                            nextGame = findViewById(R.id.nextGame)
                             backPopUp = findViewById(R.id.backPopUp)
                             popUp.visibility = View.VISIBLE
-                            nextGame.setOnClickListener(){
-                                val intent = Intent(this, SixthGameActivity::class.java)
-                                startActivity(intent)
-                                finish()
-                            }
                             backPopUp.setOnClickListener(){
                                 finish()
                             }
@@ -161,11 +156,12 @@ class FifthGameActivity : AppCompatActivity() {
                 val startCol = viewIds.indexOf(startPoint!!.id) % gridLayout.columnCount
 
                 pointsInitial = arrayOf(
-                    arrayOf(1, 0, 2, 0, 4),
-                    arrayOf(0, 0, 3, 0, 5),
-                    arrayOf(0, 0, 0, 0, 0),
-                    arrayOf(0, 2, 0, 4, 0),
-                    arrayOf(0, 1, 3, 5, 0)
+                    arrayOf(3, 0, 0, 0, 0, 0),
+                    arrayOf(0, 0, 0, 0, 0, 0),
+                    arrayOf(0, 0, 0, 0, 4, 0),
+                    arrayOf(0, 0, 4, 2, 1, 0),
+                    arrayOf(0, 2, 0, 1, 0, 0),
+                    arrayOf(0, 0, 0, 3, 0, 0)
                 )
                 // Altera o valor na matriz atual apenas se o valor na matriz inicial for 0
                 if (pointsInitial[endRow][endCol] == 0) {

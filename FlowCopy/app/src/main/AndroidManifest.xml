@@ -13,6 +13,27 @@
         android:theme="@style/Theme.FlowCopy"
         tools:targetApi="31">
         <activity
+            android:name=".play.games.TwelfthGameActivity"
+            android:exported="false" />
+        <activity
+            android:name=".play.games.EleventhGameActivity"
+            android:exported="false" />
+        <activity
+            android:name=".play.games.TenthGameActivity"
+            android:exported="false" />
+        <activity
+            android:name=".play.games.NinthGameActivity"
+            android:exported="false" />
+        <activity
+            android:name=".play.games.EighthGameActivity"
+            android:exported="false" />
+        <activity
+            android:name=".play.games.SeventhGameActivity"
+            android:exported="false" />
+        <activity
+            android:name=".play.games.SixthGameActivity"
+            android:exported="false" />
+        <activity
             android:name=".AboutActivity"
             android:exported="false" />
         <activity

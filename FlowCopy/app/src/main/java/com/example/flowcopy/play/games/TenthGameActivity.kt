@@ -14,7 +14,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import com.example.flowcopy.R
 
-class FifthGameActivity : AppCompatActivity() {
+class TenthGameActivity : AppCompatActivity() {
 
     private lateinit var resetImg: ImageView
     private lateinit var closeBtn: ImageView
@@ -42,7 +42,7 @@ class FifthGameActivity : AppCompatActivity() {
     @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_fifth_game)
+        setContentView(R.layout.activity_tenth_game)
 
         resetImg = findViewById(R.id.resetView)
 
@@ -59,19 +59,19 @@ class FifthGameActivity : AppCompatActivity() {
 
         gridLayout = findViewById(R.id.gridLayout)
         pointsInitial = arrayOf(
-            arrayOf(1, 0, 2, 0, 4),
-            arrayOf(0, 0, 3, 0, 5),
-            arrayOf(0, 0, 0, 0, 0),
-            arrayOf(0, 2, 0, 4, 0),
-            arrayOf(0, 1, 3, 5, 0)
+            arrayOf(2, 0, 0, 0, 0),
+            arrayOf(5, 1, 0, 1, 0),
+            arrayOf(0, 0, 0, 5, 2),
+            arrayOf(3, 0, 0, 3, 4),
+            arrayOf(4, 0, 0, 0, 0)
         )
         pointsCurrent = pointsInitial.copyOf()
         pointsFinal = arrayOf(
-            arrayOf(1, 2, 2, 4, 4),
-            arrayOf(1, 2, 3, 4, 5),
-            arrayOf(1, 2, 3, 4, 5),
-            arrayOf(1, 2, 3, 4, 5),
-            arrayOf(1, 1, 3, 5, 5)
+            arrayOf(2, 2, 2, 2, 2),
+            arrayOf(5, 1, 1, 1, 2),
+            arrayOf(5, 5, 5, 5, 2),
+            arrayOf(3, 3, 3, 3, 4),
+            arrayOf(4, 4, 4, 4, 4)
         )
 
         initializeGrid()
@@ -122,7 +122,7 @@ class FifthGameActivity : AppCompatActivity() {
                             backPopUp = findViewById(R.id.backPopUp)
                             popUp.visibility = View.VISIBLE
                             nextGame.setOnClickListener(){
-                                val intent = Intent(this, SixthGameActivity::class.java)
+                                val intent = Intent(this, EleventhGameActivity::class.java)
                                 startActivity(intent)
                                 finish()
                             }
@@ -161,11 +161,11 @@ class FifthGameActivity : AppCompatActivity() {
                 val startCol = viewIds.indexOf(startPoint!!.id) % gridLayout.columnCount
 
                 pointsInitial = arrayOf(
-                    arrayOf(1, 0, 2, 0, 4),
-                    arrayOf(0, 0, 3, 0, 5),
-                    arrayOf(0, 0, 0, 0, 0),
-                    arrayOf(0, 2, 0, 4, 0),
-                    arrayOf(0, 1, 3, 5, 0)
+                    arrayOf(2, 0, 0, 0, 0),
+                    arrayOf(5, 1, 0, 1, 0),
+                    arrayOf(0, 0, 0, 5, 2),
+                    arrayOf(3, 0, 0, 3, 4),
+                    arrayOf(4, 0, 0, 0, 0)
                 )
                 // Altera o valor na matriz atual apenas se o valor na matriz inicial for 0
                 if (pointsInitial[endRow][endCol] == 0) {

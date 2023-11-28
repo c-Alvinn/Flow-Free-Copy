@@ -26,7 +26,7 @@ class FirstGameActivity : AppCompatActivity() {
     private lateinit var pointsInitial: Array<Array<Int>>
     private lateinit var pointsCurrent: Array<Array<Int>>
     private lateinit var pointsFinal: Array<Array<Int>>
-    private val pointColors = intArrayOf(Color.GRAY, Color.RED, Color.GREEN, Color.BLUE, Color.YELLOW)
+    private val pointColors = intArrayOf(Color.GRAY, Color.RED, Color.GREEN, Color.BLUE, Color.YELLOW, Color.MAGENTA, Color.CYAN, Color.WHITE)
 
     private val viewIds = arrayOf(
         R.id.view10, R.id.view11, R.id.view12,
