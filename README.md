@@ -51,7 +51,7 @@ Flow is a game that involves connecting colored dots on a board, filling the ent
 
 ````bash
     # Clone the project
-    $ git clone https://github.com/DevGustavus/REPOSITORY_NAME.git
+    $ git clone https://github.com/c-Alvinn/Flow-Free-Copy.git
 ````
 
 ````bash
