@@ -1,6 +1,7 @@
 package com.example.flowcopy.play
 
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.flowcopy.databinding.ActivityMenuPlayBinding
@@ -25,6 +26,9 @@ class MenuPlayActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMenuPlayBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+
 
         binding.backView.setOnClickListener(){
             finish()

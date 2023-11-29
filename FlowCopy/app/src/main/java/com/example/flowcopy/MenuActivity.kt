@@ -1,6 +1,7 @@
 package com.example.flowcopy
 
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.flowcopy.DAO.Conta
@@ -19,6 +20,9 @@ class MenuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+
 
         //Carregamento dos dados do banco
         val banco_contas = MyDataBaseHelper(applicationContext)
