@@ -2,6 +2,7 @@ package com.example.flowcopy
 
 import android.content.Intent
 import android.content.pm.ActivityInfo
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.flowcopy.DAO.Conta
@@ -23,6 +24,11 @@ class MenuActivity : AppCompatActivity() {
 
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 
+        // Verificar se a versão do Android é igual ou superior a Lollipop (API 21)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            // Definir a cor desejada para a barra de notificação
+            window.statusBarColor = getColor(R.color.black) // Substitua "sua_cor" pelo ID real da sua cor
+        }
 
         //Carregamento dos dados do banco
         val banco_contas = MyDataBaseHelper(applicationContext)

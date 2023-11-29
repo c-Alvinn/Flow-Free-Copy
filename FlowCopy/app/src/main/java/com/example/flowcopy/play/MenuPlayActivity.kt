@@ -2,8 +2,10 @@ package com.example.flowcopy.play
 
 import android.content.Intent
 import android.content.pm.ActivityInfo
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.flowcopy.R
 import com.example.flowcopy.databinding.ActivityMenuPlayBinding
 import com.example.flowcopy.play.games.EighthGameActivity
 import com.example.flowcopy.play.games.EleventhGameActivity
@@ -29,6 +31,11 @@ class MenuPlayActivity : AppCompatActivity() {
 
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 
+        // Verificar se a versão do Android é igual ou superior a Lollipop (API 21)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            // Definir a cor desejada para a barra de notificação
+            window.statusBarColor = getColor(R.color.black) // Substitua "sua_cor" pelo ID real da sua cor
+        }
 
         binding.backView.setOnClickListener(){
             finish()

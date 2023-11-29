@@ -3,6 +3,7 @@ package com.example.flowcopy.login
 import android.content.Context
 import android.content.Intent
 import android.content.pm.ActivityInfo
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -11,6 +12,7 @@ import android.widget.EditText
 import com.example.flowcopy.DAO.Conta
 import com.example.flowcopy.DAO.DAO_Conta
 import com.example.flowcopy.DAO.MyDataBaseHelper
+import com.example.flowcopy.R
 import com.example.flowcopy.databinding.ActivityRegisterBinding
 
 class RegisterActivity : AppCompatActivity() {
@@ -24,6 +26,11 @@ class RegisterActivity : AppCompatActivity() {
 
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 
+        // Verificar se a versão do Android é igual ou superior a Lollipop (API 21)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            // Definir a cor desejada para a barra de notificação
+            window.statusBarColor = getColor(R.color.black) // Substitua "sua_cor" pelo ID real da sua cor
+        }
 
         //Carregamento dos dados do banco
         val banco_contas = MyDataBaseHelper(applicationContext)

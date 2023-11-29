@@ -3,6 +3,7 @@ package com.example.flowcopy
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.net.Uri
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Html
@@ -20,6 +21,11 @@ class AboutActivity : AppCompatActivity() {
 
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 
+        // Verificar se a versão do Android é igual ou superior a Lollipop (API 21)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            // Definir a cor desejada para a barra de notificação
+            window.statusBarColor = getColor(R.color.black) // Substitua "sua_cor" pelo ID real da sua cor
+        }
 
         binding.alvaroLayout.setOnClickListener(){
             val url = "https://github.com/c-Alvinn"

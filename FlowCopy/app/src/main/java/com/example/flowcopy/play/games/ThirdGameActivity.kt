@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MotionEvent
@@ -49,6 +50,11 @@ class ThirdGameActivity : AppCompatActivity() {
 
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 
+        // Verificar se a versão do Android é igual ou superior a Lollipop (API 21)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            // Definir a cor desejada para a barra de notificação
+            window.statusBarColor = getColor(R.color.black) // Substitua "sua_cor" pelo ID real da sua cor
+        }
 
         resetImg = findViewById(R.id.N2resetView)
 
