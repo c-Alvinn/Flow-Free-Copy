@@ -38,28 +38,35 @@ class LoginActivity : AppCompatActivity() {
             val password = binding.editTextPassword.text.toString()
 
             if (username != "" && password != ""){
-                if (operacoesBanco.validarLogin(username,password)) {
-                    val conta : Conta? = operacoesBanco.retornarConta(username,password)
-                    if (operacoesBanco.logarConta(conta!!)){
-                        limparCampos(binding.editTextUsername, binding.editTextPassword)
-                        val msg = "Olá $username!\nSeja bem-vindo!"
-                        binding.popUp.text = msg
-                        binding.popUp.visibility = View.VISIBLE
-                        binding.popUp.postDelayed({binding.popUp.visibility = View.INVISIBLE},2000)
-                        val intent = Intent(this, MenuActivity::class.java)
-                        binding.root.postDelayed({startActivity(intent)}, 2200)
-                        binding.root.postDelayed({finish()}, 2200)
+                try {
+                    if (operacoesBanco.validarLogin(username,password)) {
+                        val conta : Conta? = operacoesBanco.retornarConta(username,password)
+                        if (operacoesBanco.logarConta(conta!!)){
+                            limparCampos(binding.editTextUsername, binding.editTextPassword)
+                            val msg = "Olá $username!\nSeja bem-vindo!"
+                            binding.popUp.text = msg
+                            binding.popUp.visibility = View.VISIBLE
+                            binding.popUp.postDelayed({binding.popUp.visibility = View.INVISIBLE},2000)
+                            val intent = Intent(this, MenuActivity::class.java)
+                            binding.root.postDelayed({startActivity(intent)}, 2200)
+                            binding.root.postDelayed({finish()}, 2200)
+                        }else {
+                            val msg = "Erro ao executar o Login\nTente novamente."
+                            binding.popUp.text = msg
+                            binding.popUp.visibility = View.VISIBLE
+                            binding.popUp.postDelayed(
+                                { binding.popUp.visibility = View.INVISIBLE },
+                                2000
+                            )
+                        }
+
                     }else {
                         val msg = "Erro ao executar o Login\nTente novamente."
                         binding.popUp.text = msg
                         binding.popUp.visibility = View.VISIBLE
-                        binding.popUp.postDelayed(
-                            { binding.popUp.visibility = View.INVISIBLE },
-                            2000
-                        )
+                        binding.popUp.postDelayed({binding.popUp.visibility = View.INVISIBLE},2000)
                     }
-
-                }else {
+                }catch (e: Exception) {
                     val msg = "Erro ao executar o Login\nTente novamente."
                     binding.popUp.text = msg
                     binding.popUp.visibility = View.VISIBLE
