@@ -1,8 +1,10 @@
 package com.example.flowcopy.login
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import com.example.flowcopy.DAO.Conta
 import com.example.flowcopy.DAO.DAO_Conta
@@ -30,6 +32,9 @@ class ChangeActivity : AppCompatActivity() {
         }
 
         binding.buttonChange.setOnClickListener(){
+
+            fecharTeclado()
+
             val username = binding.editTextUsername.text.toString()
             val email = binding.editTextEmail.text.toString()
             val password = binding.editTextPassword.text.toString()
@@ -42,10 +47,11 @@ class ChangeActivity : AppCompatActivity() {
 
                     if (operacoesBanco.atualizarConta(conta)) {
                         limparCampos(binding.editTextUsername,binding.editTextEmail, binding.editTextPassword)
-                        val msg = "Conta criada com sucesso!"
+                        val msg = "Conta alterada com sucesso!"
                         binding.popUp.text = msg
                         binding.popUp.visibility = View.VISIBLE
                         binding.popUp.postDelayed({binding.popUp.visibility = View.INVISIBLE},2000)
+                        binding.popUp.postDelayed({ finish() }, 2000)
                     }else {
                         val msg = "Erro no Update.\nTente novamente."
                         binding.popUp.text = msg
@@ -68,9 +74,18 @@ class ChangeActivity : AppCompatActivity() {
         }
     }
 
-    fun limparCampos(campo1 : EditText, campo2 : EditText, campo3 : EditText){
+    private fun limparCampos(campo1 : EditText, campo2 : EditText, campo3 : EditText){
         campo1.text.clear()
         campo2.text.clear()
         campo3.text.clear()
     }
+
+    private fun fecharTeclado() {
+        val view: View? = currentFocus
+        if (view != null) {
+            val imm: InputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.hideSoftInputFromWindow(view.windowToken, 0)
+        }
+    }
+
 }

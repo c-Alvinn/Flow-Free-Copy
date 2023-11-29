@@ -23,7 +23,7 @@ class TwelfthGameActivity : AppCompatActivity() {
     private lateinit var pointsInitial: Array<Array<Int>>
     private lateinit var pointsCurrent: Array<Array<Int>>
     private lateinit var pointsFinal: Array<Array<Int>>
-    private val pointColors = intArrayOf(Color.GRAY, Color.RED, Color.GREEN, Color.BLUE, Color.YELLOW, Color.MAGENTA, Color.CYAN, Color.WHITE)
+    private val pointColors = intArrayOf(Color.GRAY, Color.RED, Color.GREEN, Color.BLUE, Color.YELLOW, Color.CYAN, Color.WHITE, Color.MAGENTA)
 
     private val viewIds = arrayOf(
         R.id.view1, R.id.view2, R.id.view3, R.id.view4, R.id.view5, R.id.view6,

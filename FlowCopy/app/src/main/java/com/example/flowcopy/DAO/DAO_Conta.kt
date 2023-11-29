@@ -80,6 +80,7 @@ class DAO_Conta(banco : MyDataBaseHelper)
                 if(nome == username && senha == password){
                     android.util.Log.i("Teste", "Usuario encontrado: " + nome + " " + senha)
                     flag = true
+                    break
                 }
                 else{
                     android.util.Log.i("Teste", "Usuario não encontrado!!!!!")
@@ -107,6 +108,7 @@ class DAO_Conta(banco : MyDataBaseHelper)
                 if(nome == username && senha == password){
                     android.util.Log.i("Teste", "Usuario encontrado: " + nome + " " + senha)
                     conta = Conta(id,nome,email,senha,logado)
+                    break
                 }
             }
         }
@@ -130,6 +132,7 @@ class DAO_Conta(banco : MyDataBaseHelper)
                 if(logado == 1){
                     android.util.Log.i("Teste", "Usuario encontrado: " + nome + " ")
                     conta = Conta(id,nome,email,senha,logado)
+                    break
                 }
             }
         }
@@ -160,6 +163,7 @@ class DAO_Conta(banco : MyDataBaseHelper)
                     if (confirmaAtualizacao <= 0){
                         return false
                     }
+                    break
                 }
             }
         }
@@ -189,6 +193,7 @@ class DAO_Conta(banco : MyDataBaseHelper)
                     if (confirmaAtualizacao <= 0){
                         return false
                     }
+                    break
                 }
             }
         }

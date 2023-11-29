@@ -1,10 +1,12 @@
 package com.example.flowcopy.login
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import com.example.flowcopy.DAO.Conta
 import com.example.flowcopy.DAO.DAO_Conta
@@ -28,6 +30,9 @@ class LoginActivity : AppCompatActivity() {
 
 
         binding.buttonLogin.setOnClickListener {
+
+            fecharTeclado()
+
             //Validar login.
             val username = binding.editTextUsername.text.toString()
             val password = binding.editTextPassword.text.toString()
@@ -74,8 +79,16 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    fun limparCampos(campo1 : EditText, campo2 : EditText){
+    private fun limparCampos(campo1 : EditText, campo2 : EditText){
         campo1.text.clear()
         campo2.text.clear()
+    }
+
+    private fun fecharTeclado() {
+        val view: View? = currentFocus
+        if (view != null) {
+            val imm: InputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.hideSoftInputFromWindow(view.windowToken, 0)
+        }
     }
 }
