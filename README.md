@@ -1,5 +1,9 @@
 <h1 align="center">Flow-Free-Copy</h1>
 
+## 📲 Download
+
+ You can download this project on your smartphone by [clicking here](https://raw.githubusercontent.com/c-Alvinn/Flow-Free-Copy/main/Flow.apk).
+
 ## 📖 About the project
 This project was inspired by the game Flow Free from Duck Duck Games, but not only that, it is also part of the extension project for the 4th semester of ADS (Analysis and Systems Development) at IFTM-CAUPT, which will be presented at IFEX. <br>
 The student developers of the application used Kotlin as the development language, and the Android Studio as the IDE.
